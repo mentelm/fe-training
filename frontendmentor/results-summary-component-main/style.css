@@ -185,8 +185,6 @@ button:active, button:hover {
         display: grid;
         place-content: center;
         min-height: 100svh;
-
-        background: hsl(var(--pale-blue));
     }
 
     .result {
@@ -197,7 +195,7 @@ button:active, button:hover {
         flex-direction: row;
         border-radius: var(--border-radius);
 
-        box-shadow: 0.5em 1em 1em hsla(var(--dark-gray-blue), 0.25);
+        box-shadow: 1em 1em 1em hsl(var(--pale-blue));
         max-width: 35em;
     }
 }

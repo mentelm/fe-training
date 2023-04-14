@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow Semi Condensed');
+
+:root {
+    --moderate-violet: 263, 55%, 52%;
+    --very-dark-grayish-blue: 217, 19%, 35%;
+    --very-dark-blackish-blue: 219, 29%, 14%;
+
+    --light-gray: 0, 0%, 81%;
+    --light-grayish-blue: 210, 46%, 95%;
+
+    --moderate-violet-lighter: #a775f1; /* color-picked from the bg-pattern-quotation */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Barlow Semi Condensed';
+    font-size: 13px;
+
+    color: hsl(var(--very-dark-grayish-blue));
+
+    min-height: 100svh;
+    background-color: hsl(var(--light-grayish-blue));
+
+    display: grid;
+    place-content: center;
+}
+
+.testimonial-container {
+    display: grid;
+    gap: 2em;
+    padding: 2em;
+
+    max-width: 87.5em;
+}
+
+.testimonial {
+    border-radius: 1em;
+    padding: 2.5em;
+
+    background: white;
+
+    box-shadow: 1em 1em 1em hsl(var(--light-gray));
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dark {
+    color: white;
+    background: hsl(var(--very-dark-blackish-blue));
+}
+
+.primary {
+    background: hsl(var(--moderate-violet));
+
+    position: relative;
+    contain: content;
+}
+
+.secondary {
+    background: hsl(var(--very-dark-grayish-blue));
+}
+
+.primary .testimonial-author::before {
+    content: '';
+    background: url('images/bg-pattern-quotation.svg') no-repeat;
+    background-size: 10em 10em;
+    width: 10em;
+    height: 10em;
+
+    position: absolute;
+    top: 0;
+    right: 6.5em;
+    z-index: -1;
+}
+
+.testimonial-author {
+    display: flex;
+    gap: 2em;
+    font-weight: 600;
+}
+
+
+.testimonial-author img {
+    border-radius: 50%;
+    height: 2.2em;
+}
+
+.author-state {
+    opacity: 50%;
+}
+
+.testimonial h1 {
+    font-size: 1.45em;
+    font-weight: 600;
+}
+
+.testimonial p {
+    opacity: 70%;
+}
+
+#daniel img {
+    outline: 0.2em solid var(--moderate-violet-lighter);
+}
+
+#patrick img {
+    outline: 0.2em solid hsl(var(--moderate-violet));
+}
+
+@media (min-width: 1100px) {
+    .testimonial-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #daniel {
+        grid-column: span 2;
+    }
+
+    #patrick {
+        grid-column: span 2;
+    }
+
+    #kira {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+    }
+}
+
